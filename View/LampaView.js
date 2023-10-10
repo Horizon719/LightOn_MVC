@@ -6,6 +6,10 @@ class LampaView{
         this.#htmlLetrehozasa();
         this.elem = $(".elem:last-child")
         this.divElem = this.elem.children("div");
+        this.ujGomb = $(".uj");
+        this.ujGomb.on("click", ()=>{
+            location.reload();
+        })
         this.elem.on("click", ()=>{
             this.#esemenyLetrehozas("kattintas");
         })
@@ -24,6 +28,8 @@ class LampaView{
         let txt =  `<div class="elem">
                     </div>`;
         this.szuloElem.append(txt);
+        let uj = $(".ujJatek");
+        uj.html(`<button class="uj">Új játék</button>`);
     }
 
     szinBeallit(allapot) {

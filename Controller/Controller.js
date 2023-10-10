@@ -11,7 +11,7 @@ class Controller{
         $(window).on("kattintas", function(event){
             MODEL.setAllapot(event.detail.getIndex());
             event.detail.szinBeallit(MODEL.getAllapotLista()[event.detail.getIndex()]);
-            
+            new JatekTerView($(".jatekter"), 3, MODEL.getAllapotLista())
         })
         
     }

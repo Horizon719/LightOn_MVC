@@ -9,7 +9,39 @@ class Model{
     }
 
     setAllapot(index){
-        this.#allapotLista[index] = !this.#allapotLista[index];
+        switch (index) {
+            case 2:
+                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
+                this.#allapotLista[index-1] = !this.#allapotLista[index-1];
+                this.#allapotLista[index] = !this.#allapotLista[index];
+                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
+                break;
+            case 3:
+                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
+                this.#allapotLista[index+1] = !this.#allapotLista[index+1];
+                this.#allapotLista[index] = !this.#allapotLista[index];
+                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
+                break;
+            case 5:
+                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
+                this.#allapotLista[index-1] = !this.#allapotLista[index-1];
+                this.#allapotLista[index] = !this.#allapotLista[index];
+                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
+                break;
+            case 6:
+                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
+                this.#allapotLista[index+1] = !this.#allapotLista[index+1];
+                this.#allapotLista[index] = !this.#allapotLista[index];
+                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
+                break;
+            default:
+                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
+                this.#allapotLista[index-1] = !this.#allapotLista[index-1];
+                this.#allapotLista[index] = !this.#allapotLista[index];
+                this.#allapotLista[index+1] = !this.#allapotLista[index+1];
+                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
+                break;
+        }
     }
 
     getAllapot(){
