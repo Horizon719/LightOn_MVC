@@ -1,0 +1,22 @@
+article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jatekter{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.elem{
+    background-color: rgb(77, 77, 77);
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(200, 0, 0);
+    border-radius: 10%;
+}
