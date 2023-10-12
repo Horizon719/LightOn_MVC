@@ -2,46 +2,26 @@
 class Model{
     #allapot;
     #allapotLista = [];
-    constructor(){
+    #meret;
+    constructor(meret){
+        this.#meret = meret;
         this.#allapot = false;
-        this.#allapotLista = ["","","","","","","","",""];
+        for (let i = 0; i < this.#meret * this.#meret; i++) {
+            this.#allapotLista[i] = "";
+        }
         this.rndAllapotlista();
     }
 
     setAllapot(index){
-        switch (index) {
-            case 2:
-                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
-                this.#allapotLista[index-1] = !this.#allapotLista[index-1];
-                this.#allapotLista[index] = !this.#allapotLista[index];
-                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
-                break;
-            case 3:
-                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
-                this.#allapotLista[index+1] = !this.#allapotLista[index+1];
-                this.#allapotLista[index] = !this.#allapotLista[index];
-                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
-                break;
-            case 5:
-                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
-                this.#allapotLista[index-1] = !this.#allapotLista[index-1];
-                this.#allapotLista[index] = !this.#allapotLista[index];
-                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
-                break;
-            case 6:
-                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
-                this.#allapotLista[index+1] = !this.#allapotLista[index+1];
-                this.#allapotLista[index] = !this.#allapotLista[index];
-                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
-                break;
-            default:
-                this.#allapotLista[index-3] = !this.#allapotLista[index-3];
-                this.#allapotLista[index-1] = !this.#allapotLista[index-1];
-                this.#allapotLista[index] = !this.#allapotLista[index];
-                this.#allapotLista[index+1] = !this.#allapotLista[index+1];
-                this.#allapotLista[index+3] = !this.#allapotLista[index+3];
-                break;
+        if (index % this.#meret -1 >=0) {
+            this.#allapotLista[index - 1] = !this.#allapotLista[index - 1];
         }
+        if (index % this.#meret +1 < this.#meret) {
+            this.#allapotLista[index + 1] = !this.#allapotLista[index + 1];
+        }
+        this.#allapotLista[index] = !this.#allapotLista[index];
+        this.#allapotLista[index - this.#meret] = !this.#allapotLista[index - this.#meret];
+        this.#allapotLista[index + this.#meret] = !this.#allapotLista[index + this.#meret];
     }
 
     getAllapot(){
